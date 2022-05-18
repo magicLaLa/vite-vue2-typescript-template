@@ -1,0 +1,49 @@
+{
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"parser": "vue-eslint-parser",
+	"parserOptions": {
+		"ecmaVersion": 9,
+		"sourceType": "module",
+		"parser": "@typescript-eslint/parser"
+	},
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"plugin:vue/recommended",
+		"prettier"
+	],
+	"overrides": [
+		{
+			"files": ["*.js", "*.tsx"],
+			"rules": {
+				"@typescript-eslint/explicit-module-boundary-types": ["error"]
+			}
+		}
+	],
+	"rules": {
+		"eqeqeq": "error",
+		"quotes": ["warn", "single"],
+		"semi": ["error", "always"],
+		"prefer-const": "error",
+		"camelcase": "error",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"vue/max-attributes-per-line": ["error", {
+			"singleline": {
+				"max": 3
+			},
+			"multiline": {
+				"max": 1
+			}
+		}],
+		"vue/html-self-closing": ["error", {
+			"html": {
+				"void": "always"
+			}
+		}]
+	}
+}

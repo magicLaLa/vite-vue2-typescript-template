@@ -1,15 +1,29 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
+
+const IndexStore = namespace('IndexStore');
+
+@Component({
+  name: 'Index',
+})
+export default class Index extends Vue {
+  @IndexStore.State readonly str!: string;
+
+  public created() {
+    console.log('Index created', this.str);
+  }
+}
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <router-view />
+  </div>
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
