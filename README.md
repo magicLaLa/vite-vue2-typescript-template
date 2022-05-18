@@ -26,3 +26,9 @@
 	"preview": "vite preview"
 },
 ```
+
+#### 注意：
+
+目前项目中 ESLint 等相关依赖时基于 v7 版本，因为 v8 版本是强制 node 版本为 ^12.22.0
+
+目前 Vuex、Vue-router 版本为 3.x 版，因为后续版本就是基于 vue3 来的了
