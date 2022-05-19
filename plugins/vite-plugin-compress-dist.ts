@@ -36,6 +36,7 @@ export default function ({
 			const compressName = `${fileName}_${nowTime.format(dayjsFormat)}`;
 
 			const cb = () => {
+				// FIXME: 这里是为了等待上一个插件（viteCompression）完成写入，因为上一个插件是通过 Stream 的方式写入的，猜测是没有等待写成功就继续执行下一个插件了
 				setTimeout(() => {
 					const destStream = createWriteStream(resolve(viteConfig.root, `${output}/${compressName}.${ext}`));
 					const sourceStream = new compressing[ext].Stream();
