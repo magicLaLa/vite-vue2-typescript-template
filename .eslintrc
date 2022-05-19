@@ -31,6 +31,14 @@
 		"semi": ["error", "always"],
 		"prefer-const": "error",
 		"camelcase": "error",
+		"max-lines": ["error", {
+			"max": 400,
+			"skipBlankLines": true,
+			"skipComments": true
+		}],
+		"max-len": ["error", {
+			"code": 150
+		}],
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"vue/max-attributes-per-line": ["error", {
 			"singleline": {
