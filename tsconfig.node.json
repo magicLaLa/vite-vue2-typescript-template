@@ -2,7 +2,11 @@
   "compilerOptions": {
     "composite": true,
     "module": "esnext",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"paths": {
+			"/plugins": ["/plugins"],
+    },
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "plugins/vite-plugin-compress-dist.ts"]
 }
