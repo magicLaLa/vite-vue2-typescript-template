@@ -44,6 +44,30 @@ import { ViewUiResolver } from 'unplugin-vue-components/dist/resolvers';
 
 - [vite-plugin-style-import](https://github.com/vbenjs/vite-plugin-style-import) 按需导入组件库样式 node >= 14
 
+- [@rollup/plugin-inject](https://github.com/rollup/plugins/tree/master/packages/inject) 全局注入变量，记得声明:
+
+	```ts
+	import jQuery from 'jquery';
+
+	declare global {
+		interface window {
+			$: jQuery;
+		}
+	}
+
+	// vite.config.ts
+	import inject  from '@rollup/plugin-inject';
+	{
+		plugins: [
+			...
+			inject({
+				$: 'jquery',
+			}),
+			...
+		]
+	}
+	```
+
 ### 运行
 
 ```json
