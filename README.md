@@ -14,6 +14,8 @@
 
 - 目前 Vuex、Vue-router 版本为 3.x 版，因为后续版本就是基于 vue3 来的
 
+- vite 的 sass 是基于 [`sass`](https://github.com/sass/sass) 默认调用的是 [`dart-sass`](https://github.com/sass/dart-sass)，而且不能更改，所以项目中使用 `/deep/` 改为 `::v-deep`
+
 **推荐使用 [`nvm`](https://github.com/nvm-sh/nvm) 来做 node 的版本管理**
 
 ### Vetur + ESLint + Prettier + Editorconfig
