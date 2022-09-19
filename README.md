@@ -8,9 +8,9 @@
 
 ## 注意：
 
-- 目前 node 的版本为 _12.5.0_，后续可以通过 nvm 来安装不同的 node 版本 来升级相关依赖：例如把 ESlint7 -> ESlint8
+- 目前 node 的版本为 ~~12.5.0~~, 需要升级为 __^14.17.0__([vue-eslint-parser 移除了对 12.22.0 的支持](https://github.com/vuejs/vue-eslint-parser/commit/caac5e8eb1118c46ab0b2720b740166c136c39b4))，后续可以通过 nvm 来安装不同的 node 版本 来升级相关依赖：例如把 ESlint7 -> ESlint8
 
-- 目前项目中 ESLint 等相关依赖时基于 v7 版本，因为 v8 版本是强制 node 版本为 ^12.22.0
+- 目前项目中 ESLint 等相关依赖时基于 v7 版本，因为 v8 版本是强制 node 版本为 ~~^12.22.0~~ ^14.17.0
 
 - 目前 Vuex、Vue-router 版本为 3.x 版，因为后续版本就是基于 vue3 来的
 
