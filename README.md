@@ -8,7 +8,7 @@
 
 ## 注意：
 
-- 目前 node 的版本为 ~~12.5.0~~, 需要升级为 __^14.17.0__([vue-eslint-parser 移除了对 12.22.0 的支持](https://github.com/vuejs/vue-eslint-parser/commit/caac5e8eb1118c46ab0b2720b740166c136c39b4))，后续可以通过 nvm 来安装不同的 node 版本 来升级相关依赖：例如把 ESlint7 -> ESlint8
+- 目前 node 的版本为 ~~12.5.0~~, 需要升级为 **^14.17.0**([vue-eslint-parser 移除了对 12.22.0 的支持](https://github.com/vuejs/vue-eslint-parser/commit/caac5e8eb1118c46ab0b2720b740166c136c39b4))，后续可以通过 nvm 来安装不同的 node 版本 来升级相关依赖：例如把 ESlint7 -> ESlint8
 
 - 目前项目中 ESLint 等相关依赖时基于 v7 版本，因为 v8 版本是强制 node 版本为 ~~^12.22.0~~ ^14.17.0
 
@@ -16,7 +16,7 @@
 
 - vite 的 sass 是基于 [`sass`](https://github.com/sass/sass) 默认调用的是 [`dart-sass`](https://github.com/sass/dart-sass)，而且不能更改，所以项目中使用 `/deep/` 改为 `::v-deep`
 
-**推荐使用 [`nvm`](https://github.com/nvm-sh/nvm) 来做 node 的版本管理**
+**推荐使用 [`fnm`](https://github.com/Schniz/fnm) 来做 node 的版本管理**
 
 ### Vetur + ESLint + Prettier + Editorconfig
 
@@ -46,29 +46,31 @@ import { ViewUiResolver } from 'unplugin-vue-components/dist/resolvers';
 
 - [vite-plugin-style-import](https://github.com/vbenjs/vite-plugin-style-import) 按需导入组件库样式 node >= 14
 
+- [vite-plugin-checker](https://github.com/fi3ework/vite-plugin-checker) Vite plugin that provide checks of TypeScript, ESLint, vue-tsc, Stylelint and more.
+
 - [@rollup/plugin-inject](https://github.com/rollup/plugins/tree/master/packages/inject) 全局注入变量，记得声明:
 
-	```ts
-	import jQuery from 'jquery';
+  ```ts
+  import jQuery from 'jquery';
 
-	declare global {
-		interface window {
-			$: jQuery;
-		}
-	}
+  declare global {
+  	interface window {
+  		$: jQuery;
+  	}
+  }
 
-	// vite.config.ts
-	import inject  from '@rollup/plugin-inject';
-	{
-		plugins: [
-			...
-			inject({
-				$: 'jquery',
-			}),
-			...
-		]
-	}
-	```
+  // vite.config.ts
+  import inject  from '@rollup/plugin-inject';
+  {
+  	plugins: [
+  		...
+  		inject({
+  			$: 'jquery',
+  		}),
+  		...
+  	]
+  }
+  ```
 
 ### 运行
 
